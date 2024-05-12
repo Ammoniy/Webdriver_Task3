@@ -13,6 +13,7 @@ namespace Webdriver_Task3
 
 
         #region Data
+
         //Search
         readonly string searchData = "Google Cloud Platform Pricing Calculator";
         readonly string searchLinkText = "Google Cloud Pricing Calculator";
@@ -28,6 +29,7 @@ namespace Webdriver_Task3
         readonly string GPUNum = "1";
         readonly string LocalSSD = "2";
         readonly string Region = "europe-west4";
+
         #endregion
 
 

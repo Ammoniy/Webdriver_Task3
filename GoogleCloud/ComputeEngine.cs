@@ -34,6 +34,7 @@ namespace GoogleCloud
         }
 
         #region Locators
+
         readonly By AddToEstimate_Button = By.XPath("//I[@class='google-material-icons'][text()='add']");
         readonly By ComputeEngine_Tab = By.CssSelector("[data-service-form='8']");
         readonly By AddNumOfInstances_Button = By.XPath("(//DIV[@class='wX4xVc-Bz112c-RLmnJb'])[2]");
@@ -41,6 +42,7 @@ namespace GoogleCloud
         readonly By MachineFamily_Droplist = By.XPath("(//DIV[@class='VfPpkd-aPP78e'])[5]");
         readonly By Series_Droplist = By.XPath("(//DIV[@class='VfPpkd-aPP78e'])[6]");
         readonly By Type_Droplist = By.XPath("(//DIV[@class='VfPpkd-aPP78e'])[7]");
+
         #endregion
         public void SetupEngine(int instancesNum, string OS, string ProvisioningModel, string machineFamily, string series, string machineType)
         {
@@ -84,12 +86,15 @@ namespace GoogleCloud
         }
 
         #region Locators
+
         readonly By addGPU_Button = By.XPath("(//SPAN[@class='eBlXUe-hywKDc'])[5]");
         readonly By GPUType_Droplist = By.CssSelector("[data-field-type='158']");
         readonly By GPUNum_Droplist = By.CssSelector("[data-field-type='174']");
         readonly By LocalSSD_Droplist = By.CssSelector("[data-field-type='180']");
         readonly By Region_Droplist = By.CssSelector("[data-field-type='115']");
+
         #endregion
+
         public void SetupGPU(string GPUtype, string GPUnum, string localSSD, string region)
         {
             ScrollToElement(By.Id("ucc-84"));
@@ -131,8 +136,6 @@ namespace GoogleCloud
             driver.FindElement(By.XPath("//SPAN[@class='close']")).Click();
 
             Wait();
-
-            
 
         }
 
