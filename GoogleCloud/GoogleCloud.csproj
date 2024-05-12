@@ -56,7 +56,6 @@
     <Compile Include="ComputeEngine.cs" />
     <Compile Include="HomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchFuncs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
