@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Framework\Framework.csproj" />
     <ProjectReference Include="..\GoogleCloud\GoogleCloud.csproj" />
   </ItemGroup>
 
