@@ -18,9 +18,9 @@ namespace GoogleCloud
             this.driver = driver;
             driver.Manage().Window.Maximize();
         }
-        protected void ScrollDown()
+        protected void ScrollDown(int amount)
         {
-            new Actions(driver).ScrollByAmount(default, 280).Perform();
+            new Actions(driver).ScrollByAmount(default, amount).Perform();
         }
 
         protected void ScrollToElement(By element)
@@ -59,7 +59,7 @@ namespace GoogleCloud
             Wait();
             driver.FindElement(By.CssSelector($"[data-value='{OS}']")).Click();
 
-            ScrollDown();
+            ScrollDown(280);
             Wait();
             //Model button click
             driver.FindElement(By.XPath($"//LABEL[@class='zT2df'][text()='{ProvisioningModel}']")).Click();
@@ -97,7 +97,7 @@ namespace GoogleCloud
 
         public void SetupGPU(string GPUtype, string GPUnum, string localSSD, string region)
         {
-            ScrollToElement(By.Id("ucc-84"));
+            ScrollDown(900);
             Wait();
             //Add GPU 
             driver.FindElement(addGPU_Button).Click();
@@ -119,7 +119,7 @@ namespace GoogleCloud
             driver.FindElement(LocalSSD_Droplist).Click();
             Wait();
             driver.FindElement(By.CssSelector($"[data-value='{localSSD}']:nth-of-type(3)")).Click();
-            ScrollDown();
+            ScrollDown(280);
 
             Wait();
             //Region

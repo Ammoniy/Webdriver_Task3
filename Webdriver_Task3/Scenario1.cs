@@ -1,6 +1,7 @@
 using GoogleCloud;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Interactions;
 using System.Xml.Linq;
@@ -51,17 +52,17 @@ namespace Webdriver_Task3
         }
 
         
-        [TestCase("Free: Debian, CentOS, CoreOS, Ubuntu or BYOL (Bring Your Own License)")]
-        [TestCase("Regular")]
-        [TestCase("n1")]
-        [TestCase("n1-standard-8, vCPUs: 8, RAM: 30 GB")]
-        [TestCase("NVIDIA Tesla V100")]
-        [TestCase("2x375 GB")]
-        [TestCase("Netherlands")]
-        public void ComputeEngineSetup(string expected)
+        [TestCase("(//*[@class='Kfvdz'])[11]", "Free: Debian, CentOS, CoreOS, Ubuntu or BYOL (Bring Your Own License)")]
+        [TestCase("(//*[@class='Kfvdz'])[12]", "Regular")]
+        [TestCase("//*[@class='uZSMzf']", "n1")]
+        [TestCase("(//*[@class='Kfvdz'])[3]", "n1-standard-8, vCPUs: 8, RAM: 30 GB")]
+        [TestCase("(//*[@class='Kfvdz'])[5]", "NVIDIA Tesla V100")]
+        [TestCase("(//*[@class='Kfvdz'])[7]", "2x375 GB")]
+        [TestCase("(//*[@class='Kfvdz'])[18]", "Netherlands")]
+        public void ComputeEngineSetup(string locator, string expected)
         {
             
-            string actual = driver.FindElement(By.XPath("//*[@class='uZSMzf']")).Text;
+            string actual = driver.FindElement(By.XPath(locator)).Text;
             Assert.IsTrue(actual.Contains(expected));
         }
 
